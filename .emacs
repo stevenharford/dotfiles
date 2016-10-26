@@ -12,13 +12,41 @@
 
 ;; Remove unnecessary widgets.
 (menu-bar-mode -1)
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
+(if window-system
+    (progn
+      (tool-bar-mode -1)
+      (scroll-bar-mode -1)))
 
-;; Display line numbers, except in org mode.
-;(global-linum-mode t)
-;(defun turn-linum-mode-off () (global-linum-mode 0))
-;(add-hook 'org-mode-hook 'turn-linum-mode-off)
+;; Keep an eye on the time. Handy when running Emacs in fullscreen.
+(display-time-mode 1)
+
+;; Handle windows more conveniently.
+(winner-mode 1)
+
+;; Easily move between windows using windmove and make it work in
+;; org-mode.
+(windmove-default-keybindings)
+(add-hook 'org-shiftup-final-hook 'windmove-up)
+(add-hook 'org-shiftleft-final-hook 'windmove-left)
+(add-hook 'org-shiftdown-final-hook 'windmove-down)
+(add-hook 'org-shiftright-final-hook 'windmove-right)
+
+;; Use NeoTree to explore the filesystem.
+(global-set-key [f8] 'neotree-toggle)
+(setq neo-theme 'nerd)
+(setq neo-window-width '30)
+
+;; Set symbol for the vertical border.
+(set-display-table-slot standard-display-table
+                        'vertical-border
+                        (make-glyph-code ?│))
+
+;; Display and format line numbers, except in Org mode.
+(global-linum-mode t)
+(setq linum-format "%4d  ")
+
+(defun nolinum () (linum-mode 0))
+(add-hook 'org-mode-hook 'nolinum)
 
 ;; The fringe.
 (setq-default indicate-buffer-boundaries 'left)
@@ -51,12 +79,12 @@
 
 (setq org-startup-indented t)
 (setq org-log-repeat nil)
-(setq org-agenda-files (file-expand-wildcards "~/documents/organizer/*.org"))
+(setq org-agenda-files (file-expand-wildcards "~/organizer/*.org"))
 
 (setq org-src-fontify-natively t)
 
 ;; Use my (current) favourite color theme.
-(load-theme 'base16-monokai-dark t)
+(load-theme 'gruvbox t)
 
 ;; Settings for editing web templates using web-mode.
 (add-to-list 'auto-mode-alist '("\\.blade\\.php\\'" . web-mode))
