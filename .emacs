@@ -17,9 +17,6 @@
       (tool-bar-mode -1)
       (scroll-bar-mode -1)))
 
-;; Keep an eye on the time. Handy when running Emacs in fullscreen.
-(display-time-mode 1)
-
 ;; Handle windows more conveniently.
 (winner-mode 1)
 
@@ -85,6 +82,9 @@
 
 ;; Use my (current) favourite color theme.
 (load-theme 'gruvbox t)
+
+;; Make the mode line pretty. Subjectively at least.
+(powerline-default-theme)
 
 ;; Settings for editing web templates using web-mode.
 (add-to-list 'auto-mode-alist '("\\.blade\\.php\\'" . web-mode))
