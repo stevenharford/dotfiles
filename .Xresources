@@ -1,0 +1,14 @@
+! Configure a nice programming font.
+URxvt.font: xft:Hack:size=10
+URxvt.letterSpace: -2
+Xft.rgba: rgb
+
+! Turn off the scroll bar.
+URxvt.scrollBar: false
+
+! Add fullscreen support.
+URxvt.perl-ext-common: fullscreen
+URxvt.keysym.F11: perl:fullscreen:switch
+
+! Use my (current) favourite color theme.
+#include ".config/gruvbox-contrib/xresources/gruvbox-dark.xresources"
