@@ -52,7 +52,8 @@
 (line-number-mode 1)
 (column-number-mode 1)
 
-;; Disable cursor blinking.
+;; Disable cursor blinking on the terminal and on a graphical display.
+(setq visible-cursor nil)
 (blink-cursor-mode 0)
 
 ;; Tab and space preferences.
