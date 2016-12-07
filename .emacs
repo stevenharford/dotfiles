@@ -81,6 +81,10 @@
 
 (setq org-src-fontify-natively t)
 
+;; Use my (current) favourite programming font.
+(add-to-list 'default-frame-alist
+             '(font . "Hack-10"))
+
 ;; Use my (current) favourite color theme.
 (load-theme 'gruvbox t)
 
