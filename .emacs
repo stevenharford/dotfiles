@@ -88,8 +88,9 @@
 ;; Use my (current) favourite color theme.
 (load-theme 'gruvbox t)
 
-;; Make the mode line pretty. Subjectively at least.
-(powerline-default-theme)
+;; Make the mode line on the terminal prettier. Subjectively at least.
+(setq mode-line-front-space '(:eval (if (display-graphic-p) " " "")))
+(setq mode-line-end-spaces '(:eval (unless (display-graphic-p) "")))
 
 ;; Settings for editing web templates using web-mode.
 (add-to-list 'auto-mode-alist '("\\.blade\\.php\\'" . web-mode))
