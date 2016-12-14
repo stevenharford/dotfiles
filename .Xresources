@@ -1,5 +1,5 @@
 ! Configure a nice programming font.
-URxvt.font: xft:Hack:size=12
+URxvt.font: xft:Ubuntu Mono:size=11
 URxvt.letterSpace: -1
 URxvt.lineSpace: 1
 Xft.rgba: rgb
