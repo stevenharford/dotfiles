@@ -81,6 +81,8 @@
 
 (setq org-src-fontify-natively t)
 
+(org-babel-do-load-languages 'org-babel-load-languages '((sh . t)))
+
 ;; Use my (current) favourite programming font.
 (add-to-list 'default-frame-alist
              '(font . "Ubuntu Mono-11"))
