@@ -44,6 +44,7 @@
 
 (defun nolinum () (linum-mode 0))
 (add-hook 'org-mode-hook 'nolinum)
+(add-hook 'eww-mode-hook 'nolinum)
 
 ;; The fringe.
 (setq-default indicate-buffer-boundaries 'left)
