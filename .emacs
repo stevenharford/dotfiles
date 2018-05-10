@@ -82,7 +82,10 @@
 
 (setq org-src-fontify-natively t)
 
-(org-babel-do-load-languages 'org-babel-load-languages '((sh . t)))
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((elixir . t)
+   (sh . t)))
 
 ;; Use my (current) favourite programming font.
 (add-to-list 'default-frame-alist
