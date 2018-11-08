@@ -14,8 +14,11 @@ compinit
 # A handy shortcut for running Emacs in the current terminal window.
 alias te='emacs -nw'
 
-# Ensure gruvbox looks as it should in Emacs on the terminal.
-source ~/.config/gruvbox/gruvbox_256palette.sh
+# Conveniently change colour themes via Base16 Shell.
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 # Make life a little easier with antigen.
 source ~/.config/antigen/antigen.zsh
