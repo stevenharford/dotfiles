@@ -20,6 +20,11 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
 
+# Set default shell colours.
+if [[ ! -L ~/.base16_theme ]]; then
+    base16_gruvbox-dark-medium
+fi
+
 # Make life a little easier with antigen.
 source ~/.config/antigen/antigen.zsh
 
