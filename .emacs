@@ -111,6 +111,9 @@
 (add-hook 'css-mode-hook  'emmet-mode)
 (add-hook 'web-mode-hook 'emmet-mode)
 
+;; In elm-mode, apply elm-format to the current buffer on every save.
+(setq elm-format-on-save t)
+
 ;; Handle tmux xterm-keys to help Emacs work nicely within tmux. Also,
 ;; put the following line in ~/.tmux.conf:
 ;;   setw -g xterm-keys on
