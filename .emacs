@@ -89,7 +89,7 @@
 
 ;; Use my (current) favourite programming font.
 (add-to-list 'default-frame-alist
-             '(font . "Ubuntu Mono-11"))
+             '(font . "Hack-10"))
 
 ;; Use my (current) favourite color theme.
 (load-theme 'gruvbox t)
