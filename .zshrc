@@ -11,8 +11,22 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-# A handy shortcut for running Emacs in the current terminal window.
+# Make life a little easier with antigen.
+source ~/.config/antigen/antigen.zsh
+
+antigen use oh-my-zsh
+
+antigen bundle git
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+
+antigen theme robbyrussell
+
+antigen apply
+
+# Handy shortcuts for running Emacs in a terminal and in Crostini.
 alias te='emacs -nw'
+ce () { sommelier -X --scale=0.9 --dpi=120 emacs "$@"& }
 
 # Conveniently change colour themes via Base16 Shell.
 BASE16_SHELL="$HOME/.config/base16-shell/"
@@ -25,18 +39,10 @@ if [[ ! -L ~/.base16_theme ]]; then
     base16_gruvbox-dark-medium
 fi
 
-# Make life a little easier with antigen.
-source ~/.config/antigen/antigen.zsh
-
-antigen use oh-my-zsh
-
-antigen bundle git
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
-
-antigen theme robbyrussell
-
-export NVM_LAZY_LOAD=true
-antigen bundle lukechilds/zsh-nvm
-
-antigen apply
+# Load nvm and its bash completions only when needed. This
+# significantly speeds up shell load times.
+load_nvm () {
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+}
