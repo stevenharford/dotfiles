@@ -39,6 +39,12 @@ if [[ ! -L ~/.base16_theme ]]; then
     base16_gruvbox-dark-medium
 fi
 
+# Set the default editor - I really, really like Emacs!
+export EDITOR="/usr/bin/emacs -nw"
+
+# Configure pass.
+export PASSWORD_STORE_DIR="$HOME/organizer/passwords"
+
 # Load nvm and its bash completions only when needed. This
 # significantly speeds up shell load times.
 load_nvm () {
