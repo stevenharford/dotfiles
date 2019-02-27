@@ -24,9 +24,9 @@ antigen theme frisk
 
 antigen apply
 
-# Handy shortcuts for running Emacs in a terminal and in Crostini.
-alias te='emacs -nw'
-ce () { sommelier -X --scale=0.9 --dpi=120 emacs "$@"& }
+# Handy shortcuts for running Emacs in a terminal and in a GUI.
+alias temacs='emacs -nw'
+gemacs () { sommelier -X --scale=0.9 --dpi=120 emacs "$@"& }
 
 # Conveniently change colour themes via Base16 Shell.
 BASE16_SHELL="$HOME/.config/base16-shell/"
