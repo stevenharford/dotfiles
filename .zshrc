@@ -39,6 +39,9 @@ if [[ ! -L ~/.base16_theme ]]; then
     base16_gruvbox-dark-medium
 fi
 
+# Configure GnuPG.
+export GPG_TTY=$(tty)
+
 # Set the default editor - I really, really like Emacs!
 export EDITOR="/usr/bin/emacs -nw"
 
