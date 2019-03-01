@@ -48,6 +48,9 @@ export EDITOR="/usr/bin/emacs -nw"
 # Configure pass.
 export PASSWORD_STORE_DIR="$HOME/organizer/passwords"
 
+# Prepend my private bin to the path variable.
+export "PATH=$HOME/projects/bin:$PATH"
+
 # Load nvm and its bash completions only when needed. This
 # significantly speeds up shell load times.
 load_nvm () {
