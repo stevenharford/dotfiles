@@ -11,11 +11,6 @@ if status --is-interactive
     # Configure pass.
     set --export PASSWORD_STORE_DIR $HOME/organizer/passwords
 
-    # Handy shortcuts for running Emacs in a terminal and in a GUI
-    # (via Crostini on a Chromebook).
-    abbr --add --global te emacs -nw
-    abbr --add --global ge sommelier -X --scale=0.9 --dpi=120 emacs
-
     # Set default shell colours via Base16 Shell.
     eval sh $HOME/.config/base16-shell/scripts/base16-gruvbox-dark-medium.sh
 end
