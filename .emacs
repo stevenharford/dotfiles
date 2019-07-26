@@ -10,10 +10,6 @@
 ;; Don't display the splash screen.
 (setq inhibit-splash-screen t)
 
-;; The EasyPG Assistant will query passphrases through the minibuffer
-;; rather than an external Pinentry program.
-(setq epa-pinentry-mode 'loopback)
-
 ;; Remove unnecessary widgets.
 (menu-bar-mode -1)
 (if window-system
