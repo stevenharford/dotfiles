@@ -13,4 +13,12 @@ if status --is-interactive
 
     # Set default shell colours via Base16 Shell.
     eval sh $HOME/.config/base16-shell/scripts/base16-gruvbox-dark-medium.sh
+
+    # Ensure Fisher and packages listed in my fishfile are installed
+    # (https://github.com/jorgebucaran/fisher#bootstrap-installation).
+    if not functions -q fisher
+        set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
+        curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
+        fish -c fisher
+    end
 end
