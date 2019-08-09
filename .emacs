@@ -110,7 +110,7 @@
 
 ;; Use my (current) favourite programming font.
 (add-to-list 'default-frame-alist
-             '(font . "Hack-10"))
+             '(font . "Hack-12"))
 
 ;; Use my (current) favourite color theme.
 (load-theme 'gruvbox t)
