@@ -1,0 +1,5 @@
+[user]
+	name = Steven Harford
+	email = steven@stevenharford.com
+[core]
+	editor = emacs -nw
