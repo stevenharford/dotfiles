@@ -28,11 +28,6 @@
 (add-hook 'org-shiftdown-final-hook 'windmove-down)
 (add-hook 'org-shiftright-final-hook 'windmove-right)
 
-;; Use NeoTree to explore the filesystem.
-(global-set-key [f8] 'neotree-toggle)
-(setq neo-theme 'nerd)
-(setq neo-window-width '30)
-
 ;; Set symbol for the vertical border.
 (set-display-table-slot standard-display-table
                         'vertical-border
