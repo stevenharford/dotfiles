@@ -37,13 +37,8 @@
                         'vertical-border
                         (make-glyph-code ?│))
 
-;; Display and format line numbers, except in Org mode.
-(global-linum-mode t)
-(setq linum-format "%4d  ")
-
-(defun nolinum () (linum-mode 0))
-(add-hook 'org-mode-hook 'nolinum)
-(add-hook 'eww-mode-hook 'nolinum)
+;; Display line numbers in all programming modes.
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
 ;; The fringe.
 (setq-default indicate-buffer-boundaries 'left)
