@@ -40,10 +40,6 @@
 ;; The fringe.
 (setq-default indicate-buffer-boundaries 'left)
 
-;; Show line and column numbers in the mode line.
-(line-number-mode 1)
-(column-number-mode 1)
-
 ;; Disable cursor blinking on the terminal and on a graphical display.
 (setq visible-cursor nil)
 (blink-cursor-mode 0)
@@ -57,6 +53,12 @@
 ;; trailing blanks at the end of a line.
 (global-whitespace-mode 1)
 (setq-default whitespace-style '(face empty trailing))
+
+;; Mode line setup.
+(use-package doom-modeline
+  :ensure t
+  :hook (after-init . doom-modeline-mode)
+  :config (setq column-number-mode t))
 
 ;; Configure Ivy.
 (ivy-mode 1)
