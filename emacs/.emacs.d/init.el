@@ -16,10 +16,8 @@
 
 ;; Remove unnecessary widgets.
 (menu-bar-mode -1)
-(if window-system
-    (progn
-      (tool-bar-mode -1)
-      (scroll-bar-mode -1)))
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
 
 ;; Handle windows more conveniently.
 (winner-mode 1)
@@ -31,11 +29,6 @@
 (add-hook 'org-shiftleft-final-hook 'windmove-left)
 (add-hook 'org-shiftdown-final-hook 'windmove-down)
 (add-hook 'org-shiftright-final-hook 'windmove-right)
-
-;; Set symbol for the vertical border.
-(set-display-table-slot standard-display-table
-                        'vertical-border
-                        (make-glyph-code ?│))
 
 ;; Display line numbers in all programming modes.
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
@@ -108,10 +101,6 @@
 
 ;; Use my (current) favourite color theme.
 (load-theme 'gruvbox t)
-
-;; Make the mode line on the terminal prettier. Subjectively at least.
-(setq mode-line-front-space '(:eval (if (display-graphic-p) " " "")))
-(setq mode-line-end-spaces '(:eval (unless (display-graphic-p) "")))
 
 ;; Settings for editing web templates using web-mode.
 (add-to-list 'auto-mode-alist '("\\.blade\\.php\\'" . web-mode))
