@@ -1,8 +1,12 @@
 ;; Package management.
 (require 'package)
-(add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
+
+;; Bootstrap 'use-package'.
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
 
 ;; Save customizations outside the primary initialization file.
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
