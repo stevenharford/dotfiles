@@ -54,10 +54,6 @@
 (global-whitespace-mode 1)
 (setq-default whitespace-style '(face empty trailing))
 
-;; Ensure buffer names are unique.
-(require 'uniquify)
-(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
-
 ;; Configure Ivy.
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
