@@ -4,6 +4,10 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
 
+;; Save customizations outside the primary initialization file.
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load custom-file 'noerror)
+
 ;; Don't create backup files.
 (setq make-backup-files nil)
 
