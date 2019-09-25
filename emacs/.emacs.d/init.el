@@ -23,6 +23,9 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
+;; Use my (current) favourite programming font.
+(add-to-list 'default-frame-alist '(font . "Hack-11"))
+
 ;; Handle windows more conveniently.
 (winner-mode 1)
 
@@ -110,10 +113,6 @@
  'org-babel-load-languages
  '((elixir . t)
    (sh . t)))
-
-;; Use my (current) favourite programming font.
-(add-to-list 'default-frame-alist
-             '(font . "Hack-12"))
 
 ;; Settings for editing web templates using web-mode.
 (add-to-list 'auto-mode-alist '("\\.blade\\.php\\'" . web-mode))
