@@ -60,6 +60,16 @@
   :hook (after-init . doom-modeline-mode)
   :config (setq column-number-mode t))
 
+;; Use my (current) favourite colour theme.
+(use-package doom-themes
+  :ensure t
+  :init
+  (load-theme 'doom-one t)
+  :config
+  (doom-themes-visual-bell-config)
+  (doom-themes-treemacs-config)
+  (doom-themes-org-config))
+
 ;; Configure Ivy.
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
@@ -100,9 +110,6 @@
 ;; Use my (current) favourite programming font.
 (add-to-list 'default-frame-alist
              '(font . "Hack-12"))
-
-;; Use my (current) favourite color theme.
-(load-theme 'gruvbox t)
 
 ;; Settings for editing web templates using web-mode.
 (add-to-list 'auto-mode-alist '("\\.blade\\.php\\'" . web-mode))
