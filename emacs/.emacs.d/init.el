@@ -58,7 +58,11 @@
 (use-package doom-modeline
   :ensure t
   :hook (after-init . doom-modeline-mode)
-  :config (setq column-number-mode t))
+  :config
+  (setq doom-modeline-major-mode-icon nil)
+  (setq doom-modeline-buffer-file-name-style 'relative-from-project)
+  (setq size-indication-mode t)
+  (setq column-number-mode t))
 
 ;; Use my (current) favourite colour theme.
 (use-package doom-themes
