@@ -111,6 +111,11 @@
   ("C-x t t" . treemacs)
   ("M-0"     . 'treemacs-select-window))
 
+;; Improve key binding discovery.
+(use-package which-key
+  :ensure t
+  :init (which-key-mode))
+
 ;; Easily move between windows.
 (use-package winum
   :ensure t
