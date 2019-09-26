@@ -60,7 +60,8 @@
 ;; Mode line setup.
 (use-package doom-modeline
   :ensure t
-  :hook (after-init . doom-modeline-mode)
+  :hook
+  (after-init . doom-modeline-mode)
   :config
   (setq doom-modeline-major-mode-icon nil)
   (setq doom-modeline-buffer-file-name-style 'relative-from-project)
@@ -77,26 +78,39 @@
   (doom-themes-treemacs-config)
   (doom-themes-org-config))
 
-;; Configure Ivy.
-(ivy-mode 1)
-(setq ivy-use-virtual-buffers t)
-(setq enable-recursive-minibuffers t)
-(global-set-key "\C-s" 'swiper)
-(global-set-key (kbd "C-c C-r") 'ivy-resume)
-(global-set-key (kbd "<f6>") 'ivy-resume)
-(global-set-key (kbd "M-x") 'counsel-M-x)
-(global-set-key (kbd "C-x C-f") 'counsel-find-file)
-(global-set-key (kbd "<f1> f") 'counsel-describe-function)
-(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
-(global-set-key (kbd "<f1> l") 'counsel-find-library)
-(global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
-(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
-(global-set-key (kbd "C-c g") 'counsel-git)
-(global-set-key (kbd "C-c j") 'counsel-git-grep)
-(global-set-key (kbd "C-c k") 'counsel-ag)
-(global-set-key (kbd "C-x l") 'counsel-locate)
-(global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
-(define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
+;; Configure Ivy, Counsel and Swiper.
+(use-package ivy
+  :ensure t
+  :bind
+  ("C-c C-r" . ivy-resume)
+  ("C-x b"   . ivy-switch-buffer)
+  ("C-c v"   . ivy-push-view)
+  ("C-c V"   . ivy-pop-view)
+  :init
+  (ivy-mode 1)
+  :config
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-count-format "(%d/%d) "))
+
+(use-package counsel
+  :ensure t
+  :bind
+  (("M-x"     . counsel-M-x)
+   ("C-x C-f" . counsel-find-file)
+   ("C-c t"   . counsel-load-theme)
+   ("C-c c"   . counsel-compile)
+   ("C-c g"   . counsel-git)
+   ("C-c j"   . counsel-git-grep)
+   ("C-c L"   . counsel-git-log)
+   ("C-x l"   . counsel-locate)
+   ("C-c J"   . counsel-file-jump)
+   ("C-c m"   . counsel-linux-app))
+  :config
+  (setq counsel-git-log-cmd "env GIT_PAGER=cat git log --grep '%s'"))
+
+(use-package swiper
+  :ensure t
+  :bind ("C-s" . swiper-isearch))
 
 ;; Settings for the stupendous Org mode.
 (global-set-key "\C-cl" 'org-store-link)
