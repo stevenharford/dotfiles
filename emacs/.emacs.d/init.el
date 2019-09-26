@@ -104,12 +104,18 @@
   :ensure t
   :bind ("C-s" . swiper-isearch))
 
+;; Set up a file explorer.
+(use-package treemacs
+  :ensure t
+  :bind
+  ("C-x t t" . treemacs)
+  ("M-0"     . 'treemacs-select-window))
+
 ;; Easily move between windows.
 (use-package winum
   :ensure t
   :bind
   (:map winum-keymap
-        ("M-0" . 'winum-select-window-0-or-10)
         ("M-1" . 'winum-select-window-1)
         ("M-2" . 'winum-select-window-2)
         ("M-3" . 'winum-select-window-3)
