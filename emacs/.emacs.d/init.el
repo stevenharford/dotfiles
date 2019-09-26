@@ -29,14 +29,6 @@
 ;; Handle windows more conveniently.
 (winner-mode 1)
 
-;; Easily move between windows using windmove and make it work in
-;; org-mode.
-(windmove-default-keybindings)
-(add-hook 'org-shiftup-final-hook 'windmove-up)
-(add-hook 'org-shiftleft-final-hook 'windmove-left)
-(add-hook 'org-shiftdown-final-hook 'windmove-down)
-(add-hook 'org-shiftright-final-hook 'windmove-right)
-
 ;; Display line numbers in all programming modes.
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
@@ -111,6 +103,24 @@
 (use-package swiper
   :ensure t
   :bind ("C-s" . swiper-isearch))
+
+;; Easily move between windows.
+(use-package winum
+  :ensure t
+  :bind
+  (:map winum-keymap
+        ("M-0" . 'winum-select-window-0-or-10)
+        ("M-1" . 'winum-select-window-1)
+        ("M-2" . 'winum-select-window-2)
+        ("M-3" . 'winum-select-window-3)
+        ("M-4" . 'winum-select-window-4)
+        ("M-5" . 'winum-select-window-5)
+        ("M-6" . 'winum-select-window-6)
+        ("M-7" . 'winum-select-window-7)
+        ("M-8" . 'winum-select-window-8)
+        ("M-9" . 'winum-select-window-9))
+  :init
+  (winum-mode))
 
 ;; Settings for the stupendous Org mode.
 (global-set-key "\C-cl" 'org-store-link)
