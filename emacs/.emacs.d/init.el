@@ -23,17 +23,11 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
-;; Just scroll by one line when moving past the top or bottom of the screen.
-(setq scroll-conservatively most-positive-fixnum)
-
-;; Handle windows more conveniently.
-(winner-mode 1)
+;; The fringe.
+(setq-default indicate-buffer-boundaries 'left)
 
 ;; Display line numbers in all programming modes.
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
-
-;; The fringe.
-(setq-default indicate-buffer-boundaries 'left)
 
 ;; Disable cursor blinking.
 (blink-cursor-mode 0)
@@ -46,6 +40,12 @@
 ;; trailing blanks at the end of a line.
 (global-whitespace-mode 1)
 (setq-default whitespace-style '(face empty trailing))
+
+;; Just scroll by one line when moving past the top or bottom of the screen.
+(setq scroll-conservatively most-positive-fixnum)
+
+;; Handle windows more conveniently.
+(winner-mode 1)
 
 ;; Make sure to have nice icons.
 (use-package all-the-icons
@@ -80,10 +80,10 @@
 (use-package ivy
   :ensure t
   :bind
-  ("C-c C-r" . ivy-resume)
-  ("C-x b"   . ivy-switch-buffer)
-  ("C-c v"   . ivy-push-view)
-  ("C-c V"   . ivy-pop-view)
+  (("C-c C-r" . ivy-resume)
+   ("C-x b"   . ivy-switch-buffer)
+   ("C-c v"   . ivy-push-view)
+   ("C-c V"   . ivy-pop-view))
   :init
   (ivy-mode 1)
   :config
@@ -129,8 +129,8 @@
 (use-package treemacs
   :ensure t
   :bind
-  ("C-x t t" . treemacs)
-  ("M-0"     . 'treemacs-select-window))
+  (("C-x t t" . treemacs)
+   ("M-0"     . 'treemacs-select-window)))
 
 ;; Improve key binding discovery.
 (use-package which-key
