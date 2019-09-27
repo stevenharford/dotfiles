@@ -23,6 +23,9 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
+;; Just scroll by one line when moving past the top or bottom of the screen.
+(setq scroll-conservatively most-positive-fixnum)
+
 ;; Use my (current) favourite programming font.
 (add-to-list 'default-frame-alist '(font . "Hack-11"))
 
