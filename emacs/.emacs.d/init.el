@@ -35,13 +35,11 @@
 ;; The fringe.
 (setq-default indicate-buffer-boundaries 'left)
 
-;; Disable cursor blinking on the terminal and on a graphical display.
-(setq visible-cursor nil)
+;; Disable cursor blinking.
 (blink-cursor-mode 0)
 
 ;; Tab and space preferences.
-(define-key text-mode-map (kbd "TAB") 'tab-to-tab-stop)
-(setq tab-stop-list (number-sequence 4 200 4))
+(setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
 
 ;; Highlight any empty lines at the start/end of a buffer and any
