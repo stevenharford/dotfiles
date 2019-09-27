@@ -49,6 +49,14 @@
 (global-whitespace-mode 1)
 (setq-default whitespace-style '(face empty trailing))
 
+;; Make sure to have nice icons.
+(use-package all-the-icons
+  :ensure t
+  :if (display-graphic-p)
+  :init
+  (unless (member "all-the-icons" (font-family-list))
+    (all-the-icons-install-fonts t)))
+
 ;; Mode line setup.
 (use-package doom-modeline
   :ensure t
