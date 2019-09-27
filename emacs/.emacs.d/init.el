@@ -104,6 +104,21 @@
   :ensure t
   :bind ("C-s" . swiper-isearch))
 
+;; Settings for the stupendous Org mode.
+(use-package org
+  :bind
+  (("C-c a" . 'org-agenda)
+   ("C-c b" . 'org-switchb)
+   ("C-c l" . 'org-store-link))
+  :config
+  (setq org-startup-indented t)
+  (setq org-log-repeat nil)
+  (setq org-agenda-files (file-expand-wildcards "~/organizer/*.org"))
+  (setq org-confirm-babel-evaluate nil)
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((shell . t))))
+
 ;; Set up a file explorer.
 (use-package treemacs
   :ensure t
@@ -132,22 +147,6 @@
         ("M-9" . 'winum-select-window-9))
   :init
   (winum-mode))
-
-;; Settings for the stupendous Org mode.
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cb" 'org-iswitchb)
-
-(setq org-startup-indented t)
-(setq org-log-repeat nil)
-(setq org-agenda-files (file-expand-wildcards "~/organizer/*.org"))
-
-(setq org-src-fontify-natively t)
-
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((elixir . t)
-   (sh . t)))
 
 ;; Settings for editing web templates using web-mode.
 (add-to-list 'auto-mode-alist '("\\.blade\\.php\\'" . web-mode))
