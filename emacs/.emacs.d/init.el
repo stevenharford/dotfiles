@@ -26,9 +26,6 @@
 ;; Just scroll by one line when moving past the top or bottom of the screen.
 (setq scroll-conservatively most-positive-fixnum)
 
-;; Use my (current) favourite programming font.
-(add-to-list 'default-frame-alist '(font . "Hack-11"))
-
 ;; Handle windows more conveniently.
 (winner-mode 1)
 
@@ -158,19 +155,3 @@
         ("M-9" . 'winum-select-window-9))
   :init
   (winum-mode))
-
-;; Settings for editing web templates using web-mode.
-(add-to-list 'auto-mode-alist '("\\.blade\\.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.njk\\'" . web-mode))
-
-;; Disable compile on save in scss-mode.
-(setq scss-compile-at-save nil)
-
-;; Write HTML and CSS in a flash using emmet-mode.
-(add-hook 'sgml-mode-hook 'emmet-mode)
-(add-hook 'css-mode-hook  'emmet-mode)
-(add-hook 'web-mode-hook 'emmet-mode)
-
-;; In elm-mode, apply elm-format to the current buffer on every save.
-(setq elm-format-on-save t)
