@@ -42,6 +42,9 @@
 ;; Just scroll by one line when moving past the top or bottom of the screen.
 (setq scroll-conservatively most-positive-fixnum)
 
+;; Use my (current) favourite programming font.
+(add-to-list 'default-frame-alist '(font . "Hack-12"))
+
 ;; Handle windows more conveniently.
 (winner-mode 1)
 
