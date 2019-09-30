@@ -23,8 +23,9 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
-;; Display line numbers in all programming modes.
+;; Configure line numbers (in programming modes only).
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+(setq-default display-line-numbers-width 3)
 
 ;; Disable cursor blinking.
 (blink-cursor-mode 0)
