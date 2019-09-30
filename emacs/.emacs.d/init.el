@@ -45,6 +45,9 @@
 ;; Use my (current) favourite programming font.
 (add-to-list 'default-frame-alist '(font . "Hack-12"))
 
+;; Make text more comfortable to read.
+(setq-default line-spacing 2)
+
 ;; Handle windows more conveniently.
 (winner-mode 1)
 
