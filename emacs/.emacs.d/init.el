@@ -23,9 +23,6 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
-;; The fringe.
-(setq-default indicate-buffer-boundaries 'left)
-
 ;; Display line numbers in all programming modes.
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
