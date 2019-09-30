@@ -69,7 +69,6 @@
   :init
   (load-theme 'doom-one t)
   :config
-  (doom-themes-visual-bell-config)
   (doom-themes-treemacs-config)
   (doom-themes-org-config))
 
