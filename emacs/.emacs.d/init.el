@@ -59,6 +59,10 @@
   (unless (member "all-the-icons" (font-family-list))
     (all-the-icons-install-fonts t)))
 
+;; Handle Dockerfiles.
+(use-package dockerfile-mode
+  :ensure t)
+
 ;; Mode line setup.
 (use-package doom-modeline
   :ensure t
