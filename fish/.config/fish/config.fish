@@ -3,7 +3,7 @@ if status --is-interactive
     set --global --export PATH $HOME/projects/bin $PATH
 
     # Set the default text editor. I really, really like Emacs!
-    set --export EDITOR /usr/bin/emacs -nw
+    set --export EDITOR '/usr/bin/emacs -nw'
 
     # Configure GnuPG.
     set --export GPG_TTY (tty)
