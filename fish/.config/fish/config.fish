@@ -8,9 +8,6 @@ if status --is-interactive
     # Configure GnuPG.
     set --export GPG_TTY (tty)
 
-    # Configure pass.
-    set --export PASSWORD_STORE_DIR $HOME/organizer/passwords
-
     # Set default shell colours via Base16 Shell.
     eval sh $HOME/.config/base16-shell/scripts/base16-gruvbox-dark-medium.sh
 
