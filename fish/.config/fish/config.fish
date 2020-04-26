@@ -1,18 +1,19 @@
 if status --is-interactive
-    # Prepend my private bin to the path variable.
-    set --global --export PATH $HOME/projects/bin $PATH
-
     # Set the default text editor. I really, really like Emacs!
     set --export EDITOR '/usr/bin/emacs -nw'
 
     # Configure GnuPG.
     set --export GPG_TTY (tty)
 
-    # Set default shell colours via Base16 Shell.
-    eval sh $HOME/.config/base16-shell/scripts/base16-gruvbox-dark-medium.sh
+    # Make Base16 Shell colour themes easy to use.
+    set BASE16_SHELL "$HOME/.config/base16-shell/"
+    source "$BASE16_SHELL/profile_helper.fish"
 
-    # Ensure Fisher and packages listed in my fishfile are installed
-    # (https://github.com/jorgebucaran/fisher#bootstrap-installation).
+    # Set the default colour theme.
+    base16-gruvbox-dark-medium
+
+    # Automate the installation of Fisher (and any packages listed in
+    # the fishfile) on a new system.
     if not functions -q fisher
         set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
         curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
