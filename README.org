@@ -4,8 +4,8 @@ A simple, minimalistic and very personal set of Linux configuration
 files.
 
 Want to try them out? It's simple. Clone and enter this repository:
-: git clone https://github.com/stevenharford/dotfiles.git ~/projects/dotfiles
-: cd ~/projects/dotfiles
+: git clone https://github.com/stevenharford/dotfiles.git ~/dotfiles
+: cd ~/dotfiles
 
 Then install the dotfiles. I use [[https://www.gnu.org/software/stow/][GNU Stow]] for this:
 : stow -t ~ --no-folding emacs fish git gnupg tmux
