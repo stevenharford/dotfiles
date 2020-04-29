@@ -9,8 +9,10 @@ if status --is-interactive
     set BASE16_SHELL "$HOME/.config/base16-shell/"
     source "$BASE16_SHELL/profile_helper.fish"
 
-    # Set the default colour theme.
-    base16-gruvbox-dark-medium
+    # Ensure a colour theme is set.
+    if not test -e ~/.base16_theme
+        base16-gruvbox-dark-medium
+    end
 
     # Automate the installation of Fisher (and any packages listed in
     # the fishfile) on a new system.
