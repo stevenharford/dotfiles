@@ -59,6 +59,17 @@
   (unless (member "all-the-icons" (font-family-list))
     (all-the-icons-install-fonts t)))
 
+;; Completion framework settings.
+(use-package company
+  :ensure t
+  :config
+  (setq company-idle-delay 0)
+  (setq company-minimum-prefix-length 2)
+  (setq company-show-numbers t)
+  (setq company-tooltip-align-annotations t)
+  (setq company-tooltip-flip-when-above t)
+  (global-company-mode t))
+
 ;; Handle Dockerfiles.
 (use-package dockerfile-mode
   :ensure t)
