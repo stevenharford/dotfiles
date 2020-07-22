@@ -59,6 +59,13 @@
   (unless (member "all-the-icons" (font-family-list))
     (all-the-icons-install-fonts t)))
 
+;; Python development setup.
+(use-package anaconda-mode
+  :ensure t
+  :config
+  (add-hook 'python-mode-hook 'anaconda-mode)
+  (add-hook 'python-mode-hook 'anaconda-eldoc-mode))
+
 ;; Completion framework settings.
 (use-package company
   :ensure t
@@ -69,6 +76,12 @@
   (setq company-tooltip-align-annotations t)
   (setq company-tooltip-flip-when-above t)
   (global-company-mode t))
+
+(use-package company-anaconda
+  :ensure t
+  :after (company anaconda-mode)
+  :config
+  (add-to-list 'company-backends 'company-anaconda))
 
 ;; Handle Dockerfiles.
 (use-package dockerfile-mode
