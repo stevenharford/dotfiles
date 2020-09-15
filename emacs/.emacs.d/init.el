@@ -163,6 +163,17 @@
   (("C-x t t" . treemacs)
    ("M-0"     . 'treemacs-select-window)))
 
+;; Improve web template editing.
+(use-package web-mode
+  :ensure t
+  :mode ("\\.html\\'")
+  :config
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-engines-alist
+        '(("django" . "templates/.*\\.html\\'"))))
+
 ;; Improve key binding discovery.
 (use-package which-key
   :ensure t
