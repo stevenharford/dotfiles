@@ -15,10 +15,9 @@ if status --is-interactive
     end
 
     # Automate the installation of Fisher (and any packages listed in
-    # the fishfile) on a new system.
+    # fish_plugins) on a new system.
     if not functions -q fisher
-        set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
-        curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
-        fish -c fisher
+        curl -sL https://git.io/fisher | source
+        fisher update
     end
 end
