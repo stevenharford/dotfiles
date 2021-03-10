@@ -5,6 +5,9 @@ if status --is-interactive
     # Configure GnuPG.
     set --export GPG_TTY (tty)
 
+    # Configure pass.
+    set --export PASSWORD_STORE_DIR "$HOME/passwords"
+
     # Make Base16 Shell colour themes easy to use.
     set BASE16_SHELL "$HOME/.config/base16-shell/"
     source "$BASE16_SHELL/profile_helper.fish"
