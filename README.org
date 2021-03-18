@@ -1,13 +1,13 @@
 * dotfiles
 
-A simple, minimalistic and very personal set of Linux configuration
-files.
+A simple, minimalistic and very personal setup and configuration for
+Ubuntu.
 
-Want to try them out? It's simple. Clone and enter this repository:
-: git clone https://github.com/stevenharford/dotfiles.git ~/dotfiles
-: cd ~/dotfiles
+Just download and run a trivial shell scrip on a fresh Ubuntu install:
+: wget https://raw.githubusercontent.com/stevenharford/dotfiles/master/bin/setup.sh
+: source setup.sh
 
-Then install the dotfiles. I use [[https://www.gnu.org/software/stow/][GNU Stow]] for this:
-: stow -t ~ --no-folding emacs fish git gnupg tmux
+Then tidy up:
+: rm setup.sh
 
-Happy coding!
+That's it, happy coding!
