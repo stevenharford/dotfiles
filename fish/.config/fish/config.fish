@@ -17,8 +17,7 @@ if status --is-interactive
         base16-gruvbox-dark-medium
     end
 
-    # Automate the installation of Fisher (and any packages listed in
-    # fish_plugins) on a new system.
+    # Automate the installation of fish plugins on a new system.
     if not functions -q fisher
         curl -sL https://git.io/fisher | source
         fisher update
