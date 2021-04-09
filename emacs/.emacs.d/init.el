@@ -107,6 +107,10 @@
   (doom-themes-treemacs-config)
   (doom-themes-org-config))
 
+;; Make writing fish programs more pleasant.
+(use-package fish-mode
+  :ensure t)
+
 ;; Configure Ivy, Counsel and Swiper.
 (use-package ivy
   :ensure t
