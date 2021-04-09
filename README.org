@@ -3,8 +3,8 @@
 A simple, minimalistic and very personal setup and configuration for
 Ubuntu.
 
-Just download and run a trivial shell scrip on a fresh Ubuntu install:
-: wget https://raw.githubusercontent.com/stevenharford/dotfiles/master/bin/setup.sh
+Just download and run a trivial shell script on a fresh Ubuntu install:
+: wget https://raw.githubusercontent.com/stevenharford/dotfiles/master/setup.sh
 : source setup.sh
 
 Then tidy up:
