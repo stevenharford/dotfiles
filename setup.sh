@@ -45,7 +45,7 @@ gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profi
 git clone https://github.com/stevenharford/dotfiles.git ~/dotfiles
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 cd ~/dotfiles
-stow -t ~ --no-folding emacs fish git gnupg tmux
+stow -t ~ --no-folding emacs fish git gnupg ssh tmux
 cd ~
 
 # Change the default shell.
