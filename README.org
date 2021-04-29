@@ -1,13 +1,24 @@
 * dotfiles
 
-A simple, minimalistic and very personal setup and configuration for
-Ubuntu.
+A simple, minimalist and very personal setup and configuration for
+[Ubuntu](https://ubuntu.com/).
 
-Just download and run a trivial shell script on a fresh Ubuntu install:
+Just download and run a trivial shell script on a fresh Ubuntu
+install:
 : wget https://raw.githubusercontent.com/stevenharford/dotfiles/master/setup.sh
 : source setup.sh
 
 Then tidy up:
 : rm setup.sh
+
+I generally use [Docker](https://www.docker.com/) containers, based on
+the [official Ubuntu image](https://hub.docker.com/_/ubuntu), when
+developing and experimenting with software. This provides enormous
+flexibility without screwing up my system. Building and interacting
+with these containers is a breeze:
+: docker build -t play -f ~/dotfiles/play.Dockerfile .
+: docker run -d -it --rm --name chess --hostname chess -v "$PWD":"$PWD" -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY="$DISPLAY" play
+: docker exec chess gnome-terminal
+: docker stop chess
 
 That's it, happy coding!
