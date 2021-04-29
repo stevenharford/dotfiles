@@ -1,7 +1,7 @@
 * dotfiles
 
 A simple, minimalist and very personal setup and configuration for
-[Ubuntu](https://ubuntu.com/).
+[[https://ubuntu.com/][Ubuntu]].
 
 Just download and run a trivial shell script on a fresh Ubuntu
 install:
@@ -11,11 +11,10 @@ install:
 Then tidy up:
 : rm setup.sh
 
-I generally use [Docker](https://www.docker.com/) containers, based on
-the [official Ubuntu image](https://hub.docker.com/_/ubuntu), when
-developing and experimenting with software. This provides enormous
-flexibility without screwing up my system. Building and interacting
-with these containers is a breeze:
+I generally use [[https://www.docker.com/][Docker]] containers, based on the [[https://hub.docker.com/_/ubuntu][official Ubuntu image]],
+when developing and experimenting with software. This provides
+enormous flexibility without screwing up my system. Building and
+interacting with these containers is a breeze:
 : docker build -t play -f ~/dotfiles/play.Dockerfile .
 : docker run -d -it --rm --name chess --hostname chess -v "$PWD":"$PWD" -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY="$DISPLAY" play
 : docker exec chess gnome-terminal
