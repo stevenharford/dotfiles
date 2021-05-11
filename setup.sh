@@ -15,6 +15,11 @@ sudo apt install -y \
     make \
     pass \
     pwgen \
+    python3 \
+    python3-dev \
+    python3-pip \
+    python3-venv \
+    pipenv \
     restic \
     stow \
     tmux \
